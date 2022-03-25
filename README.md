@@ -1,9 +1,8 @@
 # Initialize
 
-Unzip dsv-server.zip
-Unzip vpn-client.zip
+Unzip `dsv-server.zip` and `vpn-client.zip`
 
-So, directory structure should look like
+So, directory structure should look like as below:
 ```
 ...
 ./dsv-server
@@ -15,7 +14,6 @@ So, directory structure should look like
 ./vpn-client
 ./vpn-client/client-eimzo.conf
 ./vpn-client/truststore.jks
-./vpn-client/client-example.uz.yks
 ./vpn-client/vpn-client.jar
 ./vpn-client/lib/*
 ...
@@ -25,6 +23,7 @@ So, directory structure should look like
 ...
 ```
 
+Copy `client-xxxxxxx.yks` file into the directory `./vpn-client/` and make appropriate changes in the file `./vpn-client/client-eimzo.conf`
 
 # Build docker image
 
