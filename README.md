@@ -41,3 +41,16 @@ docker run --rm -it -p 9091:9091 \
     -v $(pwd)/logs:/opt/app/logs \
     dsv-server-vpn-client -dsv-port 9091 -dsv-log /opt/app/logs/dsv.log -vpn-log /opt/app/logs/vpn.log
 ```
+
+## Run as daemon
+
+```
+docker run -d -it -p 9091:9091 \
+    --name dsv-server-vpn-client \
+    --restart unless-stopped \
+    --add-host e-imzo.uz:127.0.0.5 \
+    -v $(pwd)/vpn-client/client-eimzo.conf:/opt/app/vpn-client/client-eimzo.conf \
+    -v $(pwd)/vpn-client/client-xxxxxxx.yks:/opt/app/vpn-client/client-xxxxxxx.yks \
+    -v $(pwd)/logs:/opt/app/logs \
+    dsv-server-vpn-client -dsv-port 9091 -dsv-log /opt/app/logs/dsv.log -vpn-log /opt/app/logs/vpn.log
+```
