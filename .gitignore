@@ -2,3 +2,5 @@ dsv-server/
 vpn-client/
 logs/
 go.sum
+sample/java/Client.class
+sample/java/uz/
