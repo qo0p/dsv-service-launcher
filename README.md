@@ -36,6 +36,8 @@ docker build -t dsv-server-vpn-client .
 ```
 docker run --rm -it -p 9091:9091 \
     --add-host e-imzo.uz:127.0.0.5 \
+    -v /etc/timezone:/etc/timezone \
+    -v /etc/localtime:/etc/localtime:ro \
     -v $(pwd)/vpn-client/client-eimzo.conf:/opt/app/vpn-client/client-eimzo.conf \
     -v $(pwd)/vpn-client/client-xxxxxxx.yks:/opt/app/vpn-client/client-xxxxxxx.yks \
     -v $(pwd)/logs:/opt/app/logs \
@@ -49,6 +51,8 @@ docker run -d -it -p 9091:9091 \
     --name dsv-server-vpn-client \
     --restart unless-stopped \
     --add-host e-imzo.uz:127.0.0.5 \
+    -v /etc/timezone:/etc/timezone \
+    -v /etc/localtime:/etc/localtime:ro \
     -v $(pwd)/vpn-client/client-eimzo.conf:/opt/app/vpn-client/client-eimzo.conf \
     -v $(pwd)/vpn-client/client-xxxxxxx.yks:/opt/app/vpn-client/client-xxxxxxx.yks \
     -v $(pwd)/logs:/opt/app/logs \
