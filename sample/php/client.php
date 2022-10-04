@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * Tested on docker image php7
+ *
+ * apt-get update && apt-get install -y libxml2-dev && docker-php-ext-install soap && docker-php-ext-enable soap
+ * 
+ */
+
+
 $ws_url = "http://127.0.0.1:9091/dsvs/pkcs7/v1?wsdl";
 $pkcs7 = "MIIikAYJKoZI.................";
 
